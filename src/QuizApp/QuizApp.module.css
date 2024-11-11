@@ -1,0 +1,11 @@
+/* Center the routed components for a consistent layout */
+.quizAppContainer {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 50vh; /* Ensures the component takes up the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+  }
+  
