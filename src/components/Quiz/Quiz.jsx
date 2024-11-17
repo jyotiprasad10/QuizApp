@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Quiz.module.css';
+import questionsArray from '../../utils/questions';
 
 const Quiz = ({ onScoreUpdate }) => {
   const navigate = useNavigate();
 
-  const [questions, setQuestions] = useState([
-    { question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris", explanation: "Paris is the capital city of France.", selectedOption: null },
-    { question: "What is 2 + 2?", options: ["3", "4", "5", "6"], answer: "4", explanation: "2 + 2 equals 4.", selectedOption: null },
-    { question: "What color is the sky?", options: ["Blue", "Green", "Red", "Yellow"], answer: "Blue", explanation: "On a clear day, the sky appears blue due to Rayleigh scattering.", selectedOption: null },
-  ]);
+  const [questions, setQuestions] = useState(questionsArray);
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -22,12 +19,12 @@ const Quiz = ({ onScoreUpdate }) => {
   const handleSubmit = () => {
     const currentQuestion = questions[currentQuestionIndex];
 
-    // Check answer and update score if correct
+    // Updating the answers here
     if (selectedOption === currentQuestion.answer) {
       setScore((prevScore) => prevScore + 1);
     }
 
-    // Update the selected option in the current question
+    // To update the selected option
     const updatedQuestions = questions.map((q, index) =>
       index === currentQuestionIndex ? { ...q, selectedOption } : q
     );
@@ -40,7 +37,7 @@ const Quiz = ({ onScoreUpdate }) => {
       setCurrentQuestionIndex(nextQuestionIndex);
       setSelectedOption(null); // Reset selection for the next question
     } else {
-      // Final question reached: update parent component and navigate to result page
+      // Routing to the result component
       onScoreUpdate(score + (selectedOption === currentQuestion.answer ? 1 : 0), updatedQuestions);
       navigate("/result");
     }

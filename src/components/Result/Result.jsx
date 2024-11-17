@@ -32,7 +32,7 @@ const Result = ({ score, questions }) => {
             </p>
             {question.selectedOption !== question.answer && (
               <p className={styles.explanationText}>
-                Correct Answer: {question.answer}. {question.explanation}
+                Correct Answer: {question.correctAnswer}. {question.explanation}
               </p>
             )}
           </div>

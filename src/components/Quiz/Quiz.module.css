@@ -59,4 +59,26 @@
   .submitButton:hover {
     background-color: #45a049;
   }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .optionButton {
+    animation: fadeIn 0.5s ease-in-out;
+    transition: transform 0.2s;
+  }
+  
+  .optionButton:hover {
+    transform: scale(1.1);
+  }
+  .optionButton:active {
+    transform: scale(0.9);
+  }
   
