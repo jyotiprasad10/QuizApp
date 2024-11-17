@@ -1,3 +1,21 @@
+The QuizApp has been totally made with React, Javascript, HTML and CSS. This app lets students answer MCQs and the lets them know their results along with feedback for the particular questions asked. The installation guide for this project has been given below for reference.
+
+The App comes under the Level 1 of the task and covers the level 1 features.
+
+The app has the basic App.js folder that is the start of every React application, this file will redirect you to the QuizApp component
+
+In the QuizApp component we have used React Routing to route to two main components of the app
+1. The Quiz Component
+2. The Result Component.
+
+The Quiz Component in short iterates over the questions array placed in the utils folder using the questions.js file. These questions are an array of objects that have the key and value pairs for the question along with the explanation and the correct answer.
+This Quiz component then sends the score that is the total number of questions answered and unanswered to the result component which then displays the result, using the Result Component.
+
+The Result component only recieves the score from the quiz component and the Explanation from the utils file and displays it to the user based on the answers he/she has chosen, this is the basic structure of the app.
+
+The app has been hosted using Netlify and is easily accessible through the link - https://quiz-appjyotiprasad.netlify.app/result
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
